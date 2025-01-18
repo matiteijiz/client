@@ -63,4 +63,15 @@ public class ResponseCustomerDto {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "ResponseCustomerDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", age=" + age +
+                '}';
+    }
 }

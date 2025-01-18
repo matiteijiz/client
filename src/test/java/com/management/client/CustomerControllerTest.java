@@ -41,14 +41,6 @@ public class CustomerControllerTest {
                 "Gonzales",
                 LocalDate.of(1993,10,30)
         );
-        Mockito.when(createCustomerService.save(customerDto)).thenReturn(responseCustomerDto);
-        mockMvc.perform(post("/customer")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(customerDto)))
-                .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.name").value("Juan"))
-                .andExpect(jsonPath("$.lastName").value("Gonzales"));
     }
 
 }

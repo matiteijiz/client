@@ -31,21 +31,23 @@ public class CustomerController {
 
     @PostMapping("/save")
     public ResponseEntity<ResponseCustomerDto> save(@RequestBody @Valid CustomerDto customerDto){
-        logger.info("Esto es un mensaje de INFO");
-        logger.debug("Esto es un mensaje de DEBUG");
-        logger.error("Esto es un mensaje de ERROR");
+        logger.info("request: " + customerDto.toString());
         ResponseCustomerDto customer = createCustomerService.save(customerDto);
+        logger.info("response: " + customer.toString());
         return ResponseEntity.status(HttpStatus.CREATED).body(customer);
     }
 
     @GetMapping("/get")
     public List<ResponseCustomerDto> getAll(){
-        return getCustomerService.getAll();
+        var customers = getCustomerService.getAll();
+        logger.info("response: " + customers.toString());
+        return customers;
     }
 
     @GetMapping("/metric")
     public ResponseEntity<Metric> calculate(){
         var metrics = metricService.get();
+        logger.info("response: " + metrics.toString());
         return ResponseEntity.status(HttpStatus.OK).body(metrics);
     }
 

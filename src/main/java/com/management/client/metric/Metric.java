@@ -20,4 +20,12 @@ public class Metric {
     public void setAgeStandardDeviation(Double ageStandardDeviation) {
         this.ageStandardDeviation = ageStandardDeviation;
     }
+
+    @Override
+    public String toString() {
+        return "Metric{" +
+                "ageMean=" + ageMean +
+                ", ageStandardDeviation=" + ageStandardDeviation +
+                '}';
+    }
 }

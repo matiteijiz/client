@@ -43,4 +43,13 @@ public class CustomerDto {
     public void setDateOfBirth(@Past LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+
+    @Override
+    public String toString() {
+        return "CustomerDto{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
+    }
 }
